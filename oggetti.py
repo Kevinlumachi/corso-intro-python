@@ -16,16 +16,16 @@ class Automobile:
         self.anno = anno
         self.marca = Marca(marca)
         self.tempo = datetime.now().year - anno
-        self.consumo = consumo 
-        self.carburante = 30
+        self.consumo = int(consumo) 
+        self.carburante = 0
     def __repr__(self):
         return "<Automobile %s>" % self.nome
 
     def rifornisci(self, litri):
         self.carburante += litri
 
-    def consuma(self, litri):
-        self.carburante -= litri
+    def consuma(self):
+        self.carburante -= self.consumo
 
 
 if __name__ == '__main__':
